@@ -30,8 +30,8 @@ class ProductProvider extends Component {
     console.log('detail')
   }
 
-  addtoCart = () => {
-    console.log('cart')
+  addToCart = id => {
+    console.log(`id is ${id}`)
   }
 
   render() {
@@ -40,7 +40,7 @@ class ProductProvider extends Component {
         {
           ...this.state,
           handleDetail: this.handleDetail,
-          addtoCart: this.addtoCart
+          addToCart: this.addToCart
         }
       }>
         {this.props.children}
