@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Cart from './Cart';
 
 export const ButtonContainer = styled.button`
 font-size: 1.4rem;
