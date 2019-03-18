@@ -10,20 +10,20 @@ class ProductProvider extends Component {
     products: [],
     details: detailProduct,
     cart: [],
-    modalOpen: true,
+    openModal: false,
     modalProduct: detailProduct,
   };
   
-    setProducts = () => {
-      let tempProducts = [];
-      storeProducts.forEach(item => {
-        const singleItem = {...item};
-        tempProducts = [...tempProducts, singleItem];
-      })
-      this.setState(() => {
-        return { products: tempProducts }
-      })
-    }
+  setProducts = () => {
+    let tempProducts = [];
+    storeProducts.forEach(item => {
+      const singleItem = {...item};
+      tempProducts = [...tempProducts, singleItem];
+    })
+    this.setState(() => {
+      return { products: tempProducts }
+    })
+  }
 
   componentDidMount() {
     this.setProducts();
@@ -51,20 +51,20 @@ class ProductProvider extends Component {
     product.total = price
 
     this.setState(() => {
-      return {products: tempProducts, cart: [...this.state.cart, product]}
+      return {products: [...tempProducts], cart: [...this.state.cart, product]}
     }, () => console.log(this.state))
   }
 
   openModal = id => {
     const product = this.getItem(id);
-    this.setState = () => {
-      return {modalProduct: product, modalOpen: true}
-    }
+    this.setState(() => {
+      return {modalProduct: product, openModal: true}
+    }, () => console.log(this.state))
   }
 
   closeModal = () => {
     this.setState(() => {
-      return {modalOpen: false}
+      return {openModal: false}
     }
   )}
 
