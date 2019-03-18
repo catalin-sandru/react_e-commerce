@@ -10,9 +10,10 @@ class ProductProvider extends Component {
     products: [],
     details: detailProduct,
     cart: [],
-    openModal: false,
+    modal: false,
     modalProduct: detailProduct,
   };
+
   
   setProducts = () => {
     let tempProducts = [];
@@ -58,13 +59,13 @@ class ProductProvider extends Component {
   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
-      return {modalProduct: product, openModal: true}
+      return {modalProduct: product, modal: true}
     }, () => console.log(this.state))
   }
 
   closeModal = () => {
     this.setState(() => {
-      return {openModal: false}
+      return {modal: false}
     }
   )}
 
